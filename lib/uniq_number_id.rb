@@ -14,7 +14,7 @@ module UniqNumberId
   #
   #   user = User.new
   #   user.save
-  #   user.member_number # => "17263"
+  #   user.member_number # => 17263
   #   user.renew_member_number # => true, will update member_number with a new number
   #
 
@@ -43,9 +43,13 @@ module UniqNumberId
   end
 
   module InstanceMethodsOnCallback
+    #TODO: support generate random number bases on attr type
+    #      for example, if attr DB type is integer, then generate integer
+    #                   if attr DB type is String, then generate hex string
     def generate_uniq_number_id(attr, bytes, length)
       self.send("#{attr}=", loop do
-                  random_number =  SecureRandom.random_bytes(bytes).unpack('N')[0]
+                  random_number = SecureRandom.random_bytes(bytes).unpack('N')[0]
+                  random_number = random_number.to_s[0..length-1].to_i
                   break random_number unless self.class.exists?(attr => random_number)
                 end)
     end

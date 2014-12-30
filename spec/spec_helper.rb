@@ -3,6 +3,7 @@ Bundler.setup
 
 require 'uniq_number_id'
 require_relative 'models/user'
+require_relative 'models/course'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = UniqNumberId::VERSION
   spec.authors       = ["Yuan He"]
   spec.email         = ["lendage@gmail.com"]
-  spec.summary       = %q{Greate uniques random number id for any model in ruby on rails.}
+  spec.summary       = %q{Create uniques random number id for any model in ruby on rails.}
   spec.description   = %q{Add to your models an easily way to generate uniq numbers}
   spec.homepage      = ""
   spec.license       = "MIT"
@@ -23,5 +23,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.1.0"
-  spec.add_development_dependency "pry"
 end

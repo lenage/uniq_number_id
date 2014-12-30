@@ -1,6 +1,6 @@
 # UniqNumberId
 
-TODO: Write a gem description
+Create uniques random number id for any model in ruby on rails.
 
 ## Installation
 
@@ -20,7 +20,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Example using Active Record:
+
+```ruby
+# Schema: User(member_number:integer)
+class User < ActiveRecord::Base
+uniq_number_id :member_number, length: 5 # default length 8
+end
+
+user = User.new
+user.save
+user.member_number # => 17263
+user.renew_member_number # => true, will update member_number with a new number
+```
 
 ## Contributing
 

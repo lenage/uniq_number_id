@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["lendage@gmail.com"]
   spec.summary       = %q{Create uniques random number id for any model in ruby on rails.}
   spec.description   = %q{Add to your models an easily way to generate uniq numbers}
-  spec.homepage      = ""
+  spec.homepage      = "https://git.llsapp.com/yuan/uniq_number_id"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

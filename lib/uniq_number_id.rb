@@ -25,7 +25,8 @@ module UniqNumberId
       options = args.extract_options!
 
       length = options.fetch(:length, 8)
-      bytes = ((length*3.0)/4.0)
+      bytes = ((length*3.0)/2.0)
+      bytes = 8 if bytes < 8
 
       args.each do |attr|
         define_method("renew_#{attr}") do
